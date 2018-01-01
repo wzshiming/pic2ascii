@@ -17,56 +17,56 @@ pic2ascii -p https://avatars0.githubusercontent.com/u/6565744 -w 50
 ```
 
 ``` log
-.'''..............................................
-c"'...............................................
-MKL"..............................................
-MMMx.''...........................................
-MMMNd.'...........................................
-MMMMNc..''........................................
-MMMMMNx'.''''.....................................
-MMMMMMMVo"..'....................................'
-MMMMMMMMMVc...'...............................'...
-MMMMMMMMMMNCc".''''.....................'....''';c
-MMMMMMMMMMMMMVc''''...........................=LKM
-MMMMMMMMMMMMMMMx".'.''..................'...;kKMMM
-MMMMMMMMMMMMMMMMQl:..''''.............''''\#XMMAKM
-MMMMMMMMMMMMMMMMMMKL\...'.'..........'.."kNMMMMKKM
-MMMMMMMMMMMMMMMMMMMMNLl:.....''....'..;cQMMNMMMMMM
-MMMMMMMMMMMMMMMMMMMMMMMXCo='.....''.:kNMMMMMMMCoVM
-MMMMMMMMMMMMMMMMMMMMMMMMMMNVLxc;"''=VMMMMMMMQc".lM
-MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMXAQQXMNNNMMMO".'.=X
-MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMNNMMC:.''.lM
-MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMNMMMMMV".'''.xM
-MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMl;OMMMMd.'.''.CM
-MMMMMMMMMMMNKVO##LOKMMMMMMMMMMMMKd'.cMMMMl...'."VM
-MMMMMMMNQxc;"'.....:kMMMMMMMMMNk:.'.xMNMMc...'.\NM
-MMMMNCo='....'.''''..\OMMMMNOo=..''.xMNMMc.'.'.dMM
-MMNC\'..'''.......'''.'#MXd\'..''''.cMMMMd.''.'CMM
-MC='..=QV;.......'...'."XQ..'''...'.:AMMMx.'.;LMNM
-c'.'';LOM#......'."l\''.#X:..''....'.#MMM#.'"VMMMM
-..'."Ql:MX"..''..lQVV\..;Nc..........kMMM#..=NMMMM
-'...lx.cMN=.'''.cOc;KC.'.OL..........kMMMk.'=NMMNx
-'..'k;.cMMl.''.lV;.dMA:'.xA'.........kMMMx."'lKMx.
-.'.lL'';XMc.''"#\."QMX:'.lN;.........kMMMd.'..=l".
-.'.kc.'=MM;.'.;c.'=KMO''.;Nl.........cMMMo.'.'....
-.''="''cQd'''''''.dMN\.'.:Nx.........lMMMo.'.'''..
-..'.'..''.....'''.:dc'''."X#.......''CMMMo....'...
-......:l':xdl;''":'..'....QL......'.cMMMX;........
-.....'l=.:kOOLk:"c.'''....OL.....'.'VMNMx.'.......
-.....=c.""'''":."c"......'QL.....''dMNNK:.'.......
-....'lcxkLCOCLkc"c;......'VL....'.lNMNMx.'........
-....:cdx""":=\cLkc=......"K#.'.'''QMMMO"''.'......
-'..."c\KOol\\llLxo=......:No...'.xMMMX=...........
-'...'c;#MMMMMMMx"c:...''.cMc.''.;NMMM#''..........
-'....\=.xCQKAOl'l:'....'.#M;.''.#MMMC"''..........
-.'...""...'":'.\='.''.'.\NL.''.oMMMA:.'...........
-".'.''.''.'.''==''...'."VM;.'.:XMMX\.'............
-O".'.........'"''''.'.:QMd.'''LMMMc''.............
-Mk''...........'...'.:VNd"''.lMMNo'''.............
-c='..................=C\.....cQVx.'''.............
-..'.'.........''...''''.'..''.''''.''.............
-.'.''.'...''''.'..''''''...'......................
-.'''"''..'"'''"'.''":''..'.''..''.................
+ ...                                              
+\".                                               
+MKL'                                              
+MMMx ..                                           
+MMMMd .  .                                        
+MMMMMc  .. ..                                     
+MMMMMNx. ....                                     
+MMMMMMMAo"  .                                    .
+MMMMMMMMMA\   .                              ...  
+MMMMMMMMMMMOc' ....                     ..   ...;c
+MMMMMMMMMMMMMAc....                         . =LXM
+MMMMMMMMMMMMMMMx" . ..                  .   ;kXMMM
+MMMMMMMMMMMMMMMMQl:  ....            .....=#NMMKKM
+MMMMMMMMMMMMMMMMMMXL\   . .          .  'kMMMMMXXM
+MMMMMMMMMMMMMMMMMMMMMCl:     ..    .  :cVMMMMMMMMM
+MMMMMMMMMMMMMMMMMMMMMMMNCo;.     .. "kNMMMMMMMCcVM
+MMMMMMMMMMMMMMMMMMMMMMMMMMMVLxl;'..;VMMMMMMMQc' lM
+MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMNKQQNMMMMMMMO' . =N
+MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMC"... lM
+MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMNMMMMMV' ... xM
+MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMl:QMMMMd .... OM
+MMMMMMMMMMMMXAQ##LOXMMMMMMMMMMMMXd. cMMMMl  ...'AM
+MMMMMMMMQxc;".    ."kMMMMMMMMMMk: . xMMMMc . . =MM
+MMMMMCo=.    ........=QMMMMMOc=. .. xMMMMc . . dMM
+MMMC\.  ''..      ... .#MXd=.  .... cMMMMd .. .OMM
+MC=. .;VV:       ..  . 'NV  ...   . :KMMMx . :LMMM
+c' ..:LOM#      . 'l=.' #N:  ..   .. LMMM# .'VMMMM
+  . 'Ql:MX'  ..  cVAA=  :Nc .        kMMM#  =MMMMM
+.   lx cMM; ... lOc:XC.. QC          kMMMk .;MMMMx
+.. .k: cMMl .. lA; oMK". xK.       . kMMMx '.cXMx 
+ . cC..:XM\ ..'#\ 'VMX:. lM: .       kMMMd .  ;l' 
+...#c .;MM: . :c '=XMO.. :Ml .    .  lMMMc . .    
+...;'..\Vd'...... oMM\ . "Mx       . cMMMo . ...  
+. . .. .'    ....."dc... 'X# .     ..CMMMc .  .   
+  .   "c."xdl:..'".  .    VC      . cMMMN:        
+     .l= :kOOLk"'c.....   OL .   ..'AMMMx..  .    
+     =\.''.'''" 'c'      .QC ..  ..dMMMX" .       
+    .lcxkLOOCCkc'c:      .VC .  . lMMMMx .        
+.   "ldx"'":;\cLkc;   .  'X# . ..'VMMMQ".. . .    
+.   "c\XOoc\=clCxo;      :Mo ....xMMMN; ..        
+.   .l:#MMMMMMMx'l"  ... cM\ .. ;NMMM#..          
+.    \; xOVXKQl.c:..  .. #M; .. #MMMO'..          
+ .   '"  .'""..\=.... . \MC .. cMMMA" ..          
+" . .. .. . ..;;..   . 'AM; . "NMMX\ .            
+O'....       .".... . "QMd ...LMMMc..             
+Mk..           .   ..:AMd'.. lMMMc.'.             
+c=..                 ;C\     cQAx ...             
+  ...        ...  ..... .  .. .... ..             
+ .... .   .... .  ......   .     .                
+...'"..  ."...'' ..'".. .....  ...                
 ```
 
 ## MIT License
