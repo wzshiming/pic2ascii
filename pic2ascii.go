@@ -23,7 +23,7 @@ func ToAscii(m image.Image, chars []rune) []rune {
 	for i := 0; i < dy; i++ {
 		for j := 0; j < dx; j++ {
 			cr := m.At(j, i)
-			g, _, _, _ := color.NRGBAModel.Convert(color.GrayModel.Convert(cr)).RGBA()
+			g, _, _, _ := color.GrayModel.Convert(color.NRGBAModel.Convert(cr)).RGBA()
 			ii := int(g) / t
 			dst = append(dst, chars[ii])
 		}
