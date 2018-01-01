@@ -19,7 +19,7 @@ import (
 
 func main() {
 	pic := flag.String("p", "", "input image file")
-	chars := flag.String("c", `MNXKAVQOCL#kxdoclc\=;:"'. `, "chars")
+	chars := flag.String("c", `MMNXKAVQOCL#kxdoclc\=;:"'.  `, "chars")
 	w := flag.Uint("w", 0, "resize width")
 	h := flag.Uint("h", 0, "resize height")
 	o := flag.String("o", "", "output file")
@@ -73,7 +73,7 @@ func main() {
 		img = resize.Resize(*w, *h, img, resize.Lanczos3)
 	}
 
-	dd := pic2ascii.ToAscii(img, []rune(*chars))
+	dd := string(pic2ascii.ToAscii(img, []rune(*chars)))
 
 	if *o == "" {
 		fmt.Print(dd)
