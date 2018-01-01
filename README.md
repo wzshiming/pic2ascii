@@ -13,7 +13,7 @@ go get -u -v github.com/wzshiming/pic2ascii/cmd/pic2ascii
 ## Commands
 
 ``` shell
-pic2ascii -c "MMWNXK0Okxou=:\"'.  " -p https://avatars0.githubusercontent.com/u/6565744 -w 50
+pic2ascii -c "MMWNXK0Okxou=:\"'.  " -f https://avatars0.githubusercontent.com/u/6565744 -w 50
 ```
 
 [![](https://avatars0.githubusercontent.com/u/6565744)](https://github.com/wzshiming)
