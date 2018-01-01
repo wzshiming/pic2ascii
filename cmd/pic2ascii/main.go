@@ -17,14 +17,14 @@ import (
 )
 
 func main() {
-	pic := flag.String("p", "", "input image file")
+	pic := flag.String("f", "", "input image file")
 	chars := flag.String("c", `MMWNXK0Okxou=:"'.  `, "chars")
 	r := flag.Bool("r", false, "reverse chars")
 	w := flag.Uint("w", 0, "resize width")
 	h := flag.Uint("h", 0, "resize height")
 	o := flag.String("o", "", "output file")
-	prefix := flag.String("prefix", "", "prefix")
-	suffix := flag.String("suffix", "\n", "suffix")
+	prefix := flag.String("p", "", "prefix")
+	suffix := flag.String("s", "\n", "suffix")
 	flag.Parse()
 
 	if *pic == "" {
