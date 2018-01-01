@@ -13,7 +13,6 @@ import (
 	"net/url"
 
 	"github.com/wzshiming/pic2ascii"
-	"gopkg.in/ffmt.v1"
 )
 
 func main() {
@@ -34,7 +33,7 @@ func main() {
 
 	u, err := url.Parse(*pic)
 	if err != nil {
-		ffmt.Mark(err)
+		fmt.Println(err)
 		return
 	}
 
@@ -44,30 +43,30 @@ func main() {
 	case "http", "https":
 		resp, err := http.Get(u.String())
 		if err != nil {
-			ffmt.Mark(err)
+			fmt.Println(err)
 			return
 		}
 		defer resp.Body.Close()
 
 		f, err = ioutil.ReadAll(resp.Body)
 		if err != nil {
-			ffmt.Mark(err)
+			fmt.Println(err)
 			return
 		}
 	case "file", "":
 		f, err = ioutil.ReadFile(u.Path)
 		if err != nil {
-			ffmt.Mark(err)
+			fmt.Println(err)
 			return
 		}
 	default:
-		ffmt.Mark("unknown scheme ", u.Scheme)
+		fmt.Println("unknown scheme ", u.Scheme)
 		return
 	}
 
 	img, _, err := image.Decode(bytes.NewBuffer(f))
 	if err != nil {
-		ffmt.Mark(err)
+		fmt.Println(err)
 		return
 	}
 
