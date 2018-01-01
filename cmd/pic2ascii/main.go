@@ -19,7 +19,8 @@ import (
 
 func main() {
 	pic := flag.String("p", "", "input image file")
-	chars := flag.String("c", `MMNXKAVQOCL#kxdoclc\=;:"'.  `, "chars")
+	chars := flag.String("c", `MMWNXK0Okxou=:"'.  `, "chars")
+	r := flag.Bool("r", false, "reverse chars")
 	w := flag.Uint("w", 0, "resize width")
 	h := flag.Uint("h", 0, "resize height")
 	o := flag.String("o", "", "output file")
@@ -73,6 +74,9 @@ func main() {
 		img = resize.Resize(*w, *h, img, resize.Lanczos3)
 	}
 
+	if *r {
+		*chars = reverseString(*chars)
+	}
 	dd := string(pic2ascii.ToAscii(img, []rune(*chars)))
 
 	if *o == "" {
@@ -81,4 +85,14 @@ func main() {
 		ioutil.WriteFile(*o, []byte(dd), 0666)
 	}
 
+}
+
+func reverseString(s string) string {
+	str := []rune(s)
+	l := len(str) / 2
+	for i := 0; i < l; i++ {
+		j := len(str) - i - 1
+		str[i], str[j] = str[j], str[i]
+	}
+	return string(str)
 }
