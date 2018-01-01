@@ -10,8 +10,7 @@ func ToAscii(m image.Image, arr []rune) string {
 	bounds := m.Bounds()
 	dx := bounds.Dx()
 	dy := bounds.Dy()
-
-	t := (256 * 256) / len(arr)
+	t := (256 * 256) / (len(arr) - 1)
 	dst := bytes.NewBuffer(nil)
 	for i := 0; i < dy; i++ {
 		for j := 0; j < dx; j++ {
