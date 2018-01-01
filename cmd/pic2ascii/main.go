@@ -12,7 +12,6 @@ import (
 	"net/http"
 	"net/url"
 
-	"github.com/nfnt/resize"
 	"github.com/wzshiming/pic2ascii"
 	"gopkg.in/ffmt.v1"
 )
@@ -71,7 +70,7 @@ func main() {
 	}
 
 	if *w != 0 || *h != 0 {
-		img = resize.Resize(*w, *h, img, resize.Lanczos3)
+		img = pic2ascii.NewResize(img, int(*w), int(*h))
 	}
 
 	if *r {
