@@ -16,6 +16,7 @@ go get -u -v github.com/wzshiming/pic2ascii/cmd/pic2ascii
 pic2ascii -c "MMWNXK0Okxou=:\"'.  " -p https://avatars0.githubusercontent.com/u/6565744 -w 50
 ```
 
+![https://avatars0.githubusercontent.com/u/6565744](https://avatars0.githubusercontent.com/u/6565744)
 ``` log
                                                   
 =.                                                
