@@ -23,6 +23,8 @@ func main() {
 	w := flag.Uint("w", 0, "resize width")
 	h := flag.Uint("h", 0, "resize height")
 	o := flag.String("o", "", "output file")
+	prefix := flag.String("prefix", "", "prefix")
+	suffix := flag.String("suffix", "\n", "suffix")
 	flag.Parse()
 
 	if *pic == "" {
@@ -76,7 +78,7 @@ func main() {
 	if *r {
 		*chars = reverseString(*chars)
 	}
-	dd := string(pic2ascii.ToAscii(img, []rune(*chars)))
+	dd := string(pic2ascii.ToAscii(img, []rune(*chars), []rune(*prefix), []rune(*suffix)))
 
 	if *o == "" {
 		fmt.Print(dd)

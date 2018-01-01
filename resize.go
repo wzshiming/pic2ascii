@@ -7,10 +7,11 @@ import (
 
 type Resize struct {
 	image.Image
-	X, Y   int
+	x, y   int
 	dx, dy int
 }
 
+// Resize image
 func NewResize(img image.Image, x, y int) image.Image {
 	if x == 0 && y == 0 {
 		return img
@@ -29,16 +30,15 @@ func NewResize(img image.Image, x, y int) image.Image {
 func (c Resize) Bounds() image.Rectangle {
 	return image.Rectangle{
 		image.Point{0, 0},
-		image.Point{c.X, c.Y},
+		image.Point{c.x, c.y},
 	}
 }
 
 func (c Resize) At(x, y int) color.Color {
-	dx := c.dx
-	dy := c.dy
 	ats := []color.Color{}
-	for i, k := x*dx/c.X, (x+1)*dx/c.X; i != k; i++ {
-		for j, l := y*dy/c.Y, (y+1)*dy/c.Y; j != l; j++ {
+	j0, l0 := y*c.dy/c.y, (y+1)*c.dy/c.y
+	for i, k := x*c.dx/c.x, (x+1)*c.dx/c.x; i != k; i++ {
+		for j, l := j0, l0; j != l; j++ {
 			ats = append(ats, c.Image.At(i, j))
 		}
 	}
