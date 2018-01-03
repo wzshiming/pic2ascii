@@ -13,61 +13,52 @@ go get -u -v github.com/wzshiming/pic2ascii/cmd/pic2ascii
 ## Commands
 
 ``` shell
-pic2ascii -c "MMWNXK0Okxou=:\"'.  " -f https://avatars0.githubusercontent.com/u/6565744 -w 50
+pic2ascii -c "MMWNXK0Okxou=:\"'.  " -f https://avatars0.githubusercontent.com/u/6565744 -w 90 -h 40
 ```
 
 [![](https://avatars0.githubusercontent.com/u/6565744)](https://github.com/wzshiming)
 ``` log
- .                                                
-:..                                               
-MWO'                                              
-MMMx.                                             
-MMMMx                                             
-MMMMM=                                            
-MMMMMMk..                                         
-MMMMMMMNo.                                        
-MMMMMMMMMX=                                       
-MMMMMMMMMMM0u..                                ."u
-MMMMMMMMMMMMMX=.                              "OWM
-MMMMMMMMMMMMMMMx'                           "kWMMM
-MMMMMMMMMMMMMMMMX='                      .:OWMMNWM
-MMMMMMMMMMMMMMMMMMW0:                   .kMMMMMWWM
-MMMMMMMMMMMMMMMMMMMMM0='              'uXMMMMMMMMM
-MMMMMMMMMMMMMMMMMMMMMMMM0o".        'xMMMMMMMM0oXM
-MMMMMMMMMMMMMMMMMMMMMMMMMMMX0xu'.  "XMMMMMMMK=. =M
-MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMWXXMMMMMMMMK'.  "M
-MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM0'    =M
-MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMX'     xM
-MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM="KMMMMx      KM
-MMMMMMMMMMMMWNXOO0KWMMMMMMMMMMMMWx. uMMMM=     .NM
-MMMMMMMMXx:'.  .   'kMMMMMMMMMMx'   xMMMM=     "MM
-MMMMM0o".           .:KMMMMMKu".    xMMMMu     xMM
-MMM0:  ...            .kMWx".       uMMMMo    .0MM
-M0"  ."KX'             .NX          'NMMMx   "0MMM
-u.  .'O0Mk        .:"  .OW'          OMMMk  .XMMMM
-    .K="MW.      =KXN:  'Mu          kMMMO  "MMMMM
-    =x.:MM"     =0u"NO.  KO          kMMMk  "MMMMx
-    k' :MM=   .=X'.oMW'  xX.         kMMMx ..=WMx 
-   :0 .'MM:   .k" .XMM'  =M'         kMMMo    "=. 
-  .k=  "MM'   '= ."WMK.  'M=         =MMMu        
-   ". .:Kx..      oMM:   .Mx         =MMMu        
-       ...        'ou    .Wk        .0MMMu        
-      .=.'ou:'  .'.       KO        uMMMW'        
-     .=" 'k0K0k'.=        0O       .XMMMx.        
-     ":  ........u.      .KO      .oMMMW'         
-     uukO0KKK0k:.o'       KO      uMMMMx          
-    .ouo..''":uOOu'      .Nk     .XMMMK'          
-    .o:WKo==:uu0xo'      'Mo    .kMMMM"           
-     u'OMMMMMMMx'u.      :M:    "MMMMO.           
-     :".x0XWNKu.='       kM"    OMMM0'            
-      .   .....:"       :WO    oMMMN'             
-'             ""       'XM"   'WMMW:              
-K.            .       'KMx   .0MMM=.              
-Mk.                  'KWx..  =MMMo..              
-="                   "O:.    oKXx.                
-                      .       ..                  
-                                                  
-   ..     .   ..   .'                             
+  ..  .
+kx=::'
+MMMMMNo.
+MMMMMMMXu
+MMMMMMMMMx'
+MMMMMMMMMMMXk="..
+MMMMMMMMMMMMMMMMXo'
+MMMMMMMMMMMMMMMMMMWKko=".                                                             ..':
+MMMMMMMMMMMMMMMMMMMMMMMMWK=..                                                    . .uk0NWM
+MMMMMMMMMMMMMMMMMMMMMMMMMMMXku"  .                                            '"u0XWMMWMMM
+MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMNKOo".    ..                               .=kXWMMMMMMNNNWM
+MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMW0ko:''.                         .':x0NMMMMMMMMMMMMMMM
+MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMW0x=:'..              ."u0WMMMMMMMMMMMMMNkooOWM
+MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMWNXK0Okou==:":uxXMMMMMMMMMMMMMWk:''   .xM
+MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMWMMMMMMWk" .     .oM
+MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMKu' .       'XM
+MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM=""kMMMMMMMMN..     .    oMM
+MMMMMMMMMMMMMMMMMMNXXK00Okkouooooxk0NMMMMMMMMMMMMMMMMMMMMWXko"   'KMMMMMMMk.          'KMM
+MMMMMMMMMMMWNKOo:'.         .     . .=kXMMMMMMMMMMMMMNKk:..      :XMMMMMMMO .        'OMMM
+MMMMMMNKx"'.....                        '=kNMMWKOxu:'            'OMMMMMMMX.        .uWMMM
+MMXk='.  ...=ONNK'                      .  "NMO .                 :KMMMMMMN"     .=xXMMMMM
+=".      "okkuOMM0.           ..."=xx='   . oMW=.                  =WMMMMMW:    'KMMMMMMMM
+        "XK"..uMMM"          ..xKN0o0M0"    .OMX".                 :NMMMMMM"  . "MMMMMMMMN
+       .x:. . kMMMk.       .=0Ku"..uMMM0'.   "NMk.                 "NMMMMMW'  . .oONMMMXx'
+    . .o0. .. :NMMx   .   .x0=..  'XMMMN".    kMW=                 :XMMMMMX'      ..:=='
+  .  .:0:  . '=WMW"       .=. . ..oMMMNu.    ."MMO.                .kMMMMM0.      .
+           .  "==' ..   .    .   .kNWO"    .  'NMN"              . "0MMMMMX
+            .:". .===:""'.     '  ..'         .OMW:              .xNMMMMMNu..
+          .:u:'  'xO0KKK00k:  .o"             .oWM:            .'OMMMMMMK:.
+         'uu"""""::::::"""'.  .ou..           .xMM:           'oXMMMMMMX'
+        .uo"0kuooooxxkkO00X0ku":O:            .OMW:           OMMMMMMMW:  .
+        .uo'uXKkx=::"""":==o00o=x=.          ."NMX.       . "kMMMMMMMx'
+         =x''oXMMMMMMMMMMMMK=.'o='.           xMMo         =NMMMMMMXu.
+         .==  .=oxkO000Okx:.':u..           .oWMX:     . "xWMMMMMK=..
+.                 .    . ..=:' .            kMMO..     .xMMMMMMXu
+0o.                       ''            ."uKMXo.     .=0MMMMMMx'
+MMKu.                                 ."kWMNx' .     =WMMMMNk:..
+":".                                  ."xo:'         :xkkkx:.
+                                       .
+       ..         ..      ..       ...
+
 ```
 
 ## MIT License
