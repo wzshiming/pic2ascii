@@ -37,10 +37,14 @@ func (c Resize) Bounds() image.Rectangle {
 func (c Resize) At(x, y int) color.Color {
 	ats := []color.Color{}
 	j0, l0 := y*c.dy/c.y, (y+1)*c.dy/c.y
-	for i, k := x*c.dx/c.x, (x+1)*c.dx/c.x; i != k; i++ {
+	i0, k0 := x*c.dx/c.x, (x+1)*c.dx/c.x
+	for i, k := i0, k0; i != k; i++ {
 		for j, l := j0, l0; j != l; j++ {
 			ats = append(ats, c.Image.At(i, j))
 		}
+	}
+	if len(ats) == 0 {
+		return c.Image.At(i0, j0)
 	}
 	return Sum(ats)
 }
