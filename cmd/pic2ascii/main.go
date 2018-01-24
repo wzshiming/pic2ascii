@@ -75,6 +75,8 @@ func main() {
 		return
 	}
 
+	img = pic2ascii.NewReset(img)
+
 	if *w != 0 || *h != 0 {
 		img = pic2ascii.NewResize(img, int(*w), int(*h))
 	}
