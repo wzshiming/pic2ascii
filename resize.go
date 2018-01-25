@@ -19,6 +19,9 @@ func NewResize(img image.Image, x, y int) image.Image {
 	rect := img.Bounds()
 	dx := rect.Dx()
 	dy := rect.Dy()
+	if x == dx && y == dy {
+		return img
+	}
 	if x == 0 {
 		x = y * dx / dy
 	} else if y == 0 {
