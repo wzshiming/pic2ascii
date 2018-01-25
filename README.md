@@ -10,6 +10,12 @@ Go version >= 1.5.
 go get -u -v github.com/wzshiming/pic2ascii/cmd/pic2ascii
 ```
 
+## GIF Demo
+
+
+![](./demo/src.gif)
+![](./demo/dist.gif)
+
 ## Commands
 
 ``` shell
