@@ -31,6 +31,7 @@ func main() {
 	h := flag.Uint("h", 0, "resize height")
 	o := flag.String("o", "", "output file")
 	t := flag.String("t", "", "file type")
+	m := flag.Int("m", -1, "Gif max loop count")
 	prefix := flag.String("p", "", "prefix")
 	suffix := flag.String("s", "\n", "suffix")
 	flag.Parse()
@@ -102,26 +103,25 @@ func main() {
 			return
 		}
 
+		dds := []string{}
+		sg := pic2ascii.SliceGIF(img)
+		for _, v := range sg {
+			dds = append(dds, fmt.Sprintln(toAscii(v)))
+		}
+
 		if *o == "" {
 			if img.LoopCount == 0 {
-				img.LoopCount = -1
+				img.LoopCount = *m
 			}
 
-			sg := pic2ascii.SliceGIF(img)
 			for i := 0; i != img.LoopCount; i++ {
-				for k, v := range sg {
+				for k, v := range dds {
 					time.Sleep(time.Duration(img.Delay[k]) * time.Second / 100)
-					dd := toAscii(v)
-					fmt.Println(dd)
+					fmt.Println(v)
 				}
 			}
 		} else {
-			dd := ""
-			sg := pic2ascii.SliceGIF(img)
-			for _, v := range sg {
-				dd += fmt.Sprintln(toAscii(v))
-			}
-			ioutil.WriteFile(*o, []byte(dd), 0666)
+			ioutil.WriteFile(*o, []byte(strings.Join(dds, "\n")), 0666)
 		}
 
 	default:
