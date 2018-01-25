@@ -116,8 +116,8 @@ func main() {
 
 			for i := 0; i != img.LoopCount; i++ {
 				for k, v := range dds {
-					time.Sleep(time.Duration(img.Delay[k]) * time.Second / 100)
 					fmt.Println(v)
+					time.Sleep(time.Duration(img.Delay[k]) * time.Second / 100)
 				}
 			}
 		} else {
