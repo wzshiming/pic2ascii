@@ -8,10 +8,13 @@ import (
 	"io/ioutil"
 	"net/http"
 	"net/url"
+	"path/filepath"
+	"strings"
+	"time"
 
 	"github.com/wzshiming/pic2ascii"
 
-	_ "image/gif"
+	"image/gif"
 	_ "image/jpeg"
 	_ "image/png"
 
@@ -27,6 +30,7 @@ func main() {
 	w := flag.Uint("w", 0, "resize width")
 	h := flag.Uint("h", 0, "resize height")
 	o := flag.String("o", "", "output file")
+	t := flag.String("t", "", "file type")
 	prefix := flag.String("p", "", "prefix")
 	suffix := flag.String("s", "\n", "suffix")
 	flag.Parse()
@@ -69,29 +73,71 @@ func main() {
 		return
 	}
 
-	img, _, err := image.Decode(bytes.NewBuffer(f))
-	if err != nil {
-		fmt.Println(err)
-		return
-	}
-
-	img = pic2ascii.NewReset(img)
-
-	if *w != 0 || *h != 0 {
-		img = pic2ascii.NewResize(img, int(*w), int(*h))
-	}
-
 	if *r {
 		*chars = reverseString(*chars)
 	}
-	dd := string(pic2ascii.ToAscii(img, []rune(*chars), []rune(*prefix), []rune(*suffix)))
 
-	if *o == "" {
-		fmt.Print(dd)
-	} else {
-		ioutil.WriteFile(*o, []byte(dd), 0666)
+	toAscii := func(img image.Image) string {
+		img = pic2ascii.NewReset(img)
+
+		if *w != 0 || *h != 0 {
+			img = pic2ascii.NewResize(img, int(*w), int(*h))
+		}
+
+		return string(pic2ascii.ToAscii(img, []rune(*chars), []rune(*prefix), []rune(*suffix)))
 	}
 
+	buf := bytes.NewReader(f)
+
+	if *t == "" {
+		*t = strings.TrimPrefix(filepath.Ext(*pic), ".")
+	}
+	*t = strings.ToLower(*t)
+
+	switch *t {
+	case "gif":
+		img, err := gif.DecodeAll(buf)
+		if err != nil {
+			fmt.Println(err)
+			return
+		}
+
+		if *o == "" {
+			if img.LoopCount == 0 {
+				img.LoopCount = -1
+			}
+
+			sg := pic2ascii.SliceGIF(img)
+			for i := 0; i != img.LoopCount; i++ {
+				for k, v := range sg {
+					time.Sleep(time.Duration(img.Delay[k]) * time.Second / 100)
+					dd := toAscii(v)
+					fmt.Println(dd)
+				}
+			}
+		} else {
+			dd := ""
+			sg := pic2ascii.SliceGIF(img)
+			for _, v := range sg {
+				dd += fmt.Sprintln(toAscii(v))
+			}
+			ioutil.WriteFile(*o, []byte(dd), 0666)
+		}
+
+	default:
+		img, _, err := image.Decode(buf)
+		if err != nil {
+			fmt.Println(err)
+			return
+		}
+
+		dd := toAscii(img)
+		if *o == "" {
+			fmt.Print(dd)
+		} else {
+			ioutil.WriteFile(*o, []byte(dd), 0666)
+		}
+	}
 }
 
 func reverseString(s string) string {
