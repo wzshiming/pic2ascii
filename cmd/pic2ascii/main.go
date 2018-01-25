@@ -75,7 +75,7 @@ func main() {
 	}
 
 	if *r {
-		*chars = reverseString(*chars)
+		*chars = pic2ascii.ReverseString(*chars)
 	}
 
 	toAscii := func(img image.Image) string {
@@ -106,22 +106,24 @@ func main() {
 		dds := []string{}
 		sg := pic2ascii.SliceGIF(img)
 		for _, v := range sg {
-			dds = append(dds, fmt.Sprintln(toAscii(v)))
+			dd := toAscii(v)
+			dds = append(dds, dd)
 		}
 
-		if *o == "" {
-			if img.LoopCount == 0 {
-				img.LoopCount = *m
-			}
-
-			for i := 0; i != img.LoopCount; i++ {
-				for k, v := range dds {
-					fmt.Println(v)
-					time.Sleep(time.Duration(img.Delay[k]) * time.Second / 100)
-				}
-			}
-		} else {
+		if *o != "" {
 			ioutil.WriteFile(*o, []byte(strings.Join(dds, "\n")), 0666)
+			return
+		}
+
+		if img.LoopCount == 0 {
+			img.LoopCount = *m
+		}
+
+		for i := 0; i != img.LoopCount; i++ {
+			for k, v := range dds {
+				fmt.Println(v)
+				time.Sleep(time.Duration(img.Delay[k]) * time.Second / 100)
+			}
 		}
 
 	default:
@@ -132,20 +134,11 @@ func main() {
 		}
 
 		dd := toAscii(img)
-		if *o == "" {
-			fmt.Print(dd)
-		} else {
+		if *o != "" {
 			ioutil.WriteFile(*o, []byte(dd), 0666)
+			return
 		}
-	}
-}
 
-func reverseString(s string) string {
-	str := []rune(s)
-	l := len(str) / 2
-	for i := 0; i < l; i++ {
-		j := len(str) - i - 1
-		str[i], str[j] = str[j], str[i]
+		fmt.Print(dd)
 	}
-	return string(str)
 }
