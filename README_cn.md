@@ -15,16 +15,27 @@ go get -u -v github.com/wzshiming/pic2ascii/cmd/pic2ascii
 
 ## 用法
 
+### 示例1
+
 ``` shell
 pic2ascii -f ./demo/src.gif -w 80 -h 40 -r
+```
+或
+``` shell
+docker run --rm -it wzshiming/pic2ascii pic2ascii -f https://github.com/wzshiming/pic2ascii/blob/master/demo/src.gif?raw=true -w 80 -h 40 -r -t gif
 ```
 
 ![src](./demo/src.gif)
 ![dist](./demo/dist.gif)
 
+### 示例2
 
 ``` shell
 pic2ascii -c "MMWNXK0Okxou=:\"'.  " -f https://avatars0.githubusercontent.com/u/6565744 -w 90 -h 40
+```
+或
+``` shell
+docker run --rm -it wzshiming/pic2ascii pic2ascii -c "MMWNXK0Okxou=:\"'.  " -f https://avatars0.githubusercontent.com/u/6565744 -w 90 -h 40
 ```
 
 [![](https://avatars0.githubusercontent.com/u/6565744)](https://github.com/wzshiming)
