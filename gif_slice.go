@@ -7,20 +7,21 @@ import (
 )
 
 // SliceGIF
-func SliceGIF(g *gif.GIF) (r []image.Image) {
+func SliceGIF(g *gif.GIF, f func(image.Image)) {
 	if len(g.Image) == 0 {
-		return nil
+		return
 	}
-	r = make([]image.Image, 0, len(g.Image))
-	r = append(r, g.Image[0])
+	var img image.Image = g.Image[0]
+	f(img)
 	if len(g.Image) == 1 {
-		return r
+		return
 	}
 
 	for _, v := range g.Image[1:] {
-		r = append(r, MergeImage(r[len(r)-1], v))
+		img = MergeImage(img, v)
+		f(img)
 	}
-	return r
+	return
 }
 
 // MergeImage
