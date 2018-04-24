@@ -1,16 +1,16 @@
 # pic2ascii
 
-## Requirements
+## 需求
 
-Go version >= 1.5.
+Go 版本 >= 1.5.
 
-## Download and install
+## 下载与安装
 
 ``` shell
 go get -u -v github.com/wzshiming/pic2ascii/cmd/pic2ascii
 ```
 
-## Usage
+## 用法
 
 ``` shell
 pic2ascii -f ./demo/src.gif -w 80 -h 40 -r
@@ -69,9 +69,9 @@ MMKu.                                 ."kWMNx' .     =WMMMMNk:..
 
 ```
 
-## License
+## 许可证
 
-Pouch is licensed under the MIT License. See [LICENSE](./LICENSE) for the full license text.
+软包根据MIT License。有关完整的许可证文本，请参阅[LICENSE](./LICENSE)。
 
   
 
