@@ -25,8 +25,8 @@ or
 docker run --rm -it wzshiming/pic2ascii pic2ascii -f https://github.com/wzshiming/pic2ascii/blob/master/demo/src.gif?raw=true -w 80 -h 40 -r -t gif
 ```
 
-![src](./demo/src.gif)
-![dist](./demo/dist.gif)
+![src](https://github.com/wzshiming/pic2ascii/blob/master/demo/src.gif?raw=true)
+![dist](https://github.com/wzshiming/pic2ascii/blob/master/demo/dist.gif?raw=true)
 
 ### example2
 
