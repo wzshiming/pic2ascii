@@ -1,5 +1,8 @@
 # pic2ascii
 
+ - [English](./README.md)
+ - [简体中文](./README_cn.md)
+ 
 ## 需求
 
 Go 版本 >= 1.5.
