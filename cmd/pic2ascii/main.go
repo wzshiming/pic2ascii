@@ -2,6 +2,7 @@ package main
 
 import (
 	"bytes"
+	"crypto/tls"
 	"flag"
 	"fmt"
 	"image"
@@ -51,7 +52,14 @@ func main() {
 
 	switch u.Scheme {
 	case "http", "https":
-		resp, err := http.Get(u.String())
+		cli := &http.Client{
+			Transport: &http.Transport{
+				TLSClientConfig: &tls.Config{
+					InsecureSkipVerify: true,
+				},
+			},
+		}
+		resp, err := cli.Get(u.String())
 		if err != nil {
 			fmt.Println(err)
 			return
