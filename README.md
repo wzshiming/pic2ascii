@@ -12,6 +12,9 @@ go get -u -v github.com/wzshiming/pic2ascii/cmd/pic2ascii
 
 ## GIF Demo
 
+``` shell
+pic2ascii -f ./demo/src.gif -w 40 -h 20 -r
+```
 
 ![](./demo/src.gif)
 ![](./demo/dist.gif)
