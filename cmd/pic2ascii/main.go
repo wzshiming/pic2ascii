@@ -84,12 +84,21 @@ func main() {
 
 func showVideo(buf io.ReadCloser) error {
 	var sum time.Duration
-	return pic2ascii.VideoSlice(buf, func(dur time.Duration, img image.Image) {
+	dds := []string{}
+	err := pic2ascii.VideoSlice(buf, func(dur time.Duration, img image.Image) {
 		v := toAscii(img)
 		fmt.Println(v)
 		time.Sleep(dur - sum)
 		sum = dur
+		dds = append(dds, v)
 	})
+	if err != nil {
+		return err
+	}
+	if *o != "" {
+		return ioutil.WriteFile(*o, []byte(strings.Join(dds, "\n")), 0666)
+	}
+	return nil
 }
 
 func showGIF(buf io.Reader) error {
@@ -130,11 +139,11 @@ func showElse(buf io.Reader) error {
 	}
 
 	dd := toAscii(img)
+	fmt.Print(dd)
+
 	if *o != "" {
 		return ioutil.WriteFile(*o, []byte(dd), 0666)
 	}
-
-	fmt.Print(dd)
 	return nil
 }
 
