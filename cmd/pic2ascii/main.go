@@ -66,9 +66,15 @@ func main() {
 	case "gif":
 		err = showGIF(f)
 	case "mp4", "ts", "rtmp", "rtsp", "flv", "aac":
-		err = showVideo(f)
-	default:
+		if pic2ascii.VideoSlice != nil {
+			err = showVideo(f)
+		} else {
+			err = fmt.Errorf("The current version does not support video.")
+		}
+	case "jpeg", "jpg", "png", "bmp", "tiff", "webp":
 		err = showElse(f)
+	default:
+		err = fmt.Errorf("Unsupported formats.")
 	}
 	if err != nil {
 		fmt.Println(err)
