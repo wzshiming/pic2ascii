@@ -1,3 +1,5 @@
+//+build support_video
+
 package pic2ascii
 
 import (
