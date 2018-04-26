@@ -1,7 +1,6 @@
 package main
 
 import (
-	"bytes"
 	"crypto/tls"
 	"flag"
 	"fmt"
@@ -10,6 +9,7 @@ import (
 	"io/ioutil"
 	"net/http"
 	"net/url"
+	"os"
 	"path/filepath"
 	"strings"
 	"time"
@@ -61,19 +61,30 @@ func main() {
 		fmt.Println(err)
 		return
 	}
-
-	buf := bytes.NewReader(f)
+	defer f.Close()
 	switch *t {
 	case "gif":
-		err = showGIF(buf)
+		err = showGIF(f)
+	case "mp4", "ts", "rtmp", "rtsp", "flv", "aac":
+		err = showVideo(f)
 	default:
-		err = showElse(buf)
+		err = showElse(f)
 	}
 	if err != nil {
 		fmt.Println(err)
 		return
 	}
 	return
+}
+
+func showVideo(buf io.ReadCloser) error {
+	var sum time.Duration
+	return pic2ascii.VideoSlice(buf, func(dur time.Duration, img image.Image) {
+		v := toAscii(img)
+		fmt.Println(v)
+		time.Sleep(dur - sum)
+		sum = dur
+	})
 }
 
 func showGIF(buf io.Reader) error {
@@ -132,7 +143,7 @@ func toAscii(img image.Image) string {
 	return string(pic2ascii.ToAscii(img, []rune(*chars), []rune(*prefix), []rune(*suffix)))
 }
 
-func getFile(filpath string) ([]byte, error) {
+func getFile(filpath string) (io.ReadCloser, error) {
 	u, err := url.Parse(filpath)
 	if err != nil {
 		return nil, err
@@ -151,19 +162,13 @@ func getFile(filpath string) ([]byte, error) {
 		if err != nil {
 			return nil, err
 		}
-
-		f, err := ioutil.ReadAll(resp.Body)
-		defer resp.Body.Close()
-		if err != nil {
-			return nil, err
-		}
-		return f, nil
+		return resp.Body, nil
 	case "file", "":
-		f, err := ioutil.ReadFile(u.Path)
+		file, err := os.OpenFile(u.Path, os.O_RDONLY, 0)
 		if err != nil {
 			return nil, err
 		}
-		return f, nil
+		return file, nil
 	default:
 		return nil, fmt.Errorf("unknown scheme %v", u.Scheme)
 	}
