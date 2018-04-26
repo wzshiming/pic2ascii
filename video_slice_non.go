@@ -8,4 +8,4 @@ import (
 	"time"
 )
 
-var VideoSlice func(read io.ReadCloser, f func(time.Duration, image.Image)) error
+var VideoSlice func(read io.Reader, f func(time.Duration, image.Image)) error

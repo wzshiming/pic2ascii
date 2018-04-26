@@ -3,8 +3,10 @@
 package pic2ascii
 
 import (
+	"bytes"
 	"image"
 	"io"
+	"io/ioutil"
 	"time"
 
 	"github.com/nareix/joy4/av/avutil"
@@ -12,8 +14,15 @@ import (
 	"github.com/nareix/joy4/format"
 )
 
-var rc io.ReadCloser
-var iotoken = "mem://iotoken"
+var rc io.Reader
+var iotoken = "mem://video"
+
+// 兼容 github.com/nareix/joy4 一个强制断言的 bug
+type noper struct {
+	io.ReadSeeker
+}
+
+func (noper) Close() error { return nil }
 
 func init() {
 	avutil.DefaultHandlers.Add(func(r *avutil.RegisterHandler) {
@@ -21,9 +30,14 @@ func init() {
 			if f != iotoken {
 				return false, nil, nil
 			}
+			data, err := ioutil.ReadAll(rc)
+			if err != nil {
+				return false, nil, err
+			}
+
 			if rc0 := rc; rc0 != nil {
 				rc = nil
-				return true, rc0, nil
+				return true, noper{bytes.NewReader(data)}, nil
 			}
 			return false, nil, nil
 		}
@@ -31,7 +45,7 @@ func init() {
 	format.RegisterAll()
 }
 
-func VideoSlice(read io.ReadCloser, f func(time.Duration, image.Image)) error {
+func VideoSlice(read io.Reader, f func(time.Duration, image.Image)) error {
 	rc = read
 	file, err := avutil.Open(iotoken)
 	if err != nil {
