@@ -2,6 +2,7 @@
 
 [![Build Status](https://travis-ci.org/wzshiming/pic2ascii.svg?branch=master)](https://travis-ci.org/wzshiming/pic2ascii)
 [![Go Report Card](https://goreportcard.com/badge/github.com/wzshiming/pic2ascii)](https://goreportcard.com/report/github.com/wzshiming/pic2ascii)
+[![Docker Automated build](https://img.shields.io/docker/automated/wzshiming/pic2ascii.svg?maxAge=2592000?style=plastic)](https://github.com/wzshiming/pic2ascii/)
 [![GitHub license](https://img.shields.io/github/license/wzshiming/pic2ascii.svg)](https://github.com/wzshiming/pic2ascii/blob/master/LICENSE)
 
 - [English](https://github.com/wzshiming/pic2ascii/blob/master/README.md)
@@ -11,11 +12,23 @@
 
 Go 版本 >= 1.5.
 
+FFmpeg 版本 >= 3.X
+
 ## 下载与安装
 
 ``` shell
+# 不支持视频
 go get -u -v github.com/wzshiming/pic2ascii/cmd/pic2ascii
+
+# 支持视频(依赖 ffmpeg)
+go get -tags=support_video -u -v github.com/wzshiming/pic2ascii/cmd/pic2ascii
 ```
+
+或
+
+[Download releases](https://github.com/wzshiming/pic2ascii/releases) 不支持视频(如有需要请自行编译或使用 docker 镜像.)
+
+[Docker image](https://hub.docker.com/r/wzshiming/pic2ascii/) 支持视频
 
 ## 用法
 
@@ -91,6 +104,24 @@ MMKu.                                 ."kWMNx' .     =WMMMMNk:..
        ..         ..      ..       ...
 
 ```
+
+## 支持格式
+
+- 图片
+  - [x] jpeg
+  - [x] png
+  - [x] bmp
+  - [x] tiff
+  - [x] webp
+  - [x] gif
+
+- 视频 (依赖 ffmpeg)
+  - [x] mp4
+  - [x] ts
+  - [x] rtmp
+  - [x] rtsp
+  - [x] flv
+  - [x] aac
 
 ## 许可证
 

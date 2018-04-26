@@ -2,6 +2,7 @@
 
 [![Build Status](https://travis-ci.org/wzshiming/pic2ascii.svg?branch=master)](https://travis-ci.org/wzshiming/pic2ascii)
 [![Go Report Card](https://goreportcard.com/badge/github.com/wzshiming/pic2ascii)](https://goreportcard.com/report/github.com/wzshiming/pic2ascii)
+[![Docker Automated build](https://img.shields.io/docker/automated/wzshiming/pic2ascii.svg?maxAge=2592000?style=plastic)](https://github.com/wzshiming/pic2ascii/)
 [![GitHub license](https://img.shields.io/github/license/wzshiming/pic2ascii.svg)](https://github.com/wzshiming/pic2ascii/blob/master/LICENSE)
 
 - [English](https://github.com/wzshiming/pic2ascii/blob/master/README.md)
@@ -11,11 +12,23 @@
 
 Go version >= 1.5.
 
+FFmpeg version >= 3.X
+
 ## Download and install
 
 ``` shell
+# Not support video
 go get -u -v github.com/wzshiming/pic2ascii/cmd/pic2ascii
+
+# Support video (Depends ffmpeg)
+go get -tags=support_video -u -v github.com/wzshiming/pic2ascii/cmd/pic2ascii
 ```
+
+or
+
+[Download releases](https://github.com/wzshiming/pic2ascii/releases) Not support video (Compile or use docker image if necessary.)
+
+[Docker image](https://hub.docker.com/r/wzshiming/pic2ascii/) Support video
 
 ## Usage
 
@@ -91,6 +104,24 @@ MMKu.                                 ."kWMNx' .     =WMMMMNk:..
        ..         ..      ..       ...
 
 ```
+
+## Support formats
+
+- Picture
+  - [x] jpeg
+  - [x] png
+  - [x] bmp
+  - [x] tiff
+  - [x] webp
+  - [x] gif
+
+- Video (Depends ffmpeg)
+  - [x] mp4
+  - [x] ts
+  - [x] rtmp
+  - [x] rtsp
+  - [x] flv
+  - [x] aac
 
 ## License
 
