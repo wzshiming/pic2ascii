@@ -10,7 +10,7 @@ jobs:
     install: skip
     script: skip
     before_deploy:
-    - ./build_all.bash
+    - BASENAME=pic2ascii ./build_all.bash
     deploy:
       provider: releases
       api_key:
