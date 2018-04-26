@@ -71,10 +71,9 @@ func main() {
 		} else {
 			err = fmt.Errorf("The current version does not support video.")
 		}
-	case "jpeg", "jpg", "png", "bmp", "tiff", "webp":
-		err = showElse(f)
 	default:
-		err = fmt.Errorf("Unsupported formats.")
+		//	case "jpeg", "jpg", "png", "bmp", "tiff", "webp":
+		err = showElse(f)
 	}
 	if err != nil {
 		fmt.Println(err)
