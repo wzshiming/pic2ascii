@@ -21,6 +21,7 @@ FFmpeg 版本 >= 3.X
 go get -u -v github.com/wzshiming/pic2ascii/cmd/pic2ascii
 
 # 支持视频(依赖 ffmpeg)
+brew install ffmpeg # mac
 go get -tags=support_video -u -v github.com/wzshiming/pic2ascii/cmd/pic2ascii
 ```
 
@@ -107,15 +108,16 @@ MMKu.                                 ."kWMNx' .     =WMMMMNk:..
 
 ## 支持格式
 
-- 图片
+- [x] Ascii
+- [ ] 颜色 (like unix & windows)
+- [x] 图片
   - [x] jpeg
   - [x] png
   - [x] bmp
   - [x] tiff
   - [x] webp
   - [x] gif
-
-- 视频 (依赖 ffmpeg)
+- [x] 视频 (依赖 ffmpeg)
   - [x] mp4
   - [x] ts
   - [x] rtmp
