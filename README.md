@@ -109,7 +109,7 @@ MMKu.                                 ."kWMNx' .     =WMMMMNk:..
 ## Support formats
 
 - [x] Ascii
-- [ ] Color (like unix & windows)
+- [ ] Color (unix like & windows)
 - [x] Picture
   - [x] jpeg
   - [x] png

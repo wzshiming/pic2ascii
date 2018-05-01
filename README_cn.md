@@ -109,7 +109,7 @@ MMKu.                                 ."kWMNx' .     =WMMMMNk:..
 ## 支持格式
 
 - [x] Ascii
-- [ ] 颜色 (like unix & windows)
+- [ ] 颜色 (类unix & windows)
 - [x] 图片
   - [x] jpeg
   - [x] png
