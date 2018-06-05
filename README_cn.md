@@ -110,20 +110,21 @@ MMKu.                                 ."kWMNx' .     =WMMMMNk:..
 
 - [x] Ascii
 - [ ] 颜色 (类unix & windows)
-- [x] 图片
-  - [x] jpeg
-  - [x] png
-  - [x] bmp
-  - [x] tiff
-  - [x] webp
-  - [x] gif
-- [x] 视频 (依赖 ffmpeg)
-  - [x] mp4
-  - [x] ts
-  - [x] rtmp
-  - [x] rtsp
-  - [x] flv
-  - [x] aac
+- [x] 格式
+  - [x] 图片
+    - [x] jpeg
+    - [x] png
+    - [x] bmp
+    - [x] tiff
+    - [x] webp
+    - [x] gif
+  - [x] 视频 (依赖 ffmpeg)
+    - [x] mp4
+    - [x] ts
+    - [x] rtmp
+    - [x] rtsp
+    - [x] flv
+    - [x] aac
 
 ## 许可证
 

@@ -110,20 +110,21 @@ MMKu.                                 ."kWMNx' .     =WMMMMNk:..
 
 - [x] Ascii
 - [ ] Color (unix like & windows)
-- [x] Picture
-  - [x] jpeg
-  - [x] png
-  - [x] bmp
-  - [x] tiff
-  - [x] webp
-  - [x] gif
-- [x] Video (Depends ffmpeg)
-  - [x] mp4
-  - [x] ts
-  - [x] rtmp
-  - [x] rtsp
-  - [x] flv
-  - [x] aac
+- [x] Format
+  - [x] Picture
+    - [x] jpeg
+    - [x] png
+    - [x] bmp
+    - [x] tiff
+    - [x] webp
+    - [x] gif
+  - [x] Video (Depends ffmpeg)
+    - [x] mp4
+    - [x] ts
+    - [x] rtmp
+    - [x] rtsp
+    - [x] flv
+    - [x] aac
 
 
 ## License
