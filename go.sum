@@ -1,0 +1,4 @@
+github.com/nareix/joy4 v0.0.0-20180814221533-7d93fa5e2add h1:pv3rCcwHqetCVH0qXt3XRT+fx7TmYsiz/nczsLLPNro=
+github.com/nareix/joy4 v0.0.0-20180814221533-7d93fa5e2add/go.mod h1:aFJ1ZwLjvHN4yEzE5Bkz8rD8/d8Vlj3UIuvz2yfET7I=
+golang.org/x/image v0.0.0-20180708004352-c73c2afc3b81 h1:00VmoueYNlNz/aHIilyyQz/MHSqGoWJzpFv/HW8xpzI=
+golang.org/x/image v0.0.0-20180708004352-c73c2afc3b81/go.mod h1:ux5Hcp/YLpHSI86hEcLt0YII63i6oz57MZXIpbrjZUs=
