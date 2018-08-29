@@ -4,7 +4,7 @@ notifications:
   email: false
 jobs:
   include:
-  - go: 1.10.x
+  - go: 1.11.x
     stage: deploy
     go_import_path: github.com/wzshiming/pic2ascii
     install: skip
