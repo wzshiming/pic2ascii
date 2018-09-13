@@ -19,10 +19,21 @@ FFmpeg version >= 3.X
 ``` shell
 # Not support video
 go get -u -v github.com/wzshiming/pic2ascii/cmd/pic2ascii
+```
 
+or
+
+``` shell
 # Support video (Depends ffmpeg)
-brew install ffmpeg # mac
+brew install ffmpeg # Mac
 go get -tags=support_video -u -v github.com/wzshiming/pic2ascii/cmd/pic2ascii
+```
+
+or
+
+``` shell
+# In Mac
+brew install wzshiming/core/pic2ascii
 ```
 
 or
@@ -125,7 +136,6 @@ MMKu.                                 ."kWMNx' .     =WMMMMNk:..
     - [x] rtsp
     - [x] flv
     - [x] aac
-
 
 ## License
 

@@ -19,10 +19,21 @@ FFmpeg 版本 >= 3.X
 ``` shell
 # 不支持视频
 go get -u -v github.com/wzshiming/pic2ascii/cmd/pic2ascii
+```
 
+或
+
+``` shell
 # 支持视频(依赖 ffmpeg)
-brew install ffmpeg # mac
+brew install ffmpeg # Mac
 go get -tags=support_video -u -v github.com/wzshiming/pic2ascii/cmd/pic2ascii
+```
+
+或
+
+``` shell
+# 在 Mac
+brew install wzshiming/core/pic2ascii
 ```
 
 或
