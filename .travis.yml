@@ -13,8 +13,7 @@ jobs:
     - BASENAME=pic2ascii ./build_all.bash
     deploy:
       provider: releases
-      api_key:
-        secure: GzblmBWxT2Mrj3Tj7enzGYJkYhpo/dfSyKObGom+C+Y15qRyUWRznyTVIsFSqiMTHVZioLHlQIvrBkR2o41PoFYCeP5xQ/4mEbdoIzjFhpWK8E7Y+WCtd0PLfIVOm2wiZpOy+ucu5KnBYeXyopyFHmTBlVjsUNQwUK4SdEE6RWlZB6rN8FHaF+KzW4hikDVHPSdZ0b49WsTNkSyToD8t9vnTFKrMMpfgwBJCJKpg+IADhz15/LESbGq/zNZWirZ1x6UtAez0gcc4VOMNNILbMu76Ldb0WVyHcnnkp+wXMacWxezxqTsKt70/483p6M8TLXIRR0WFPAHIerEOpodPxea4KJaSh8idZGnchL0NeaHpLG+sCEvwxrwHy666kVLpmEjnPEsSK4FvF7e04LFauPVYDJmgu44eUXqaSu/8o0Gv/cr9vWa0JrUWbGgzWFL+h3W53Qzkna98adBMfe1M2z8msMbT2fNWmsmgYPK6HZ4DM+QANc3DyomSOUf8LIEYRxxD7PKaTcjaJGXMF+/tpwnz51yotOX5ddh/QJXxOi+36lxV3EoWcJ8u/XsPnnEn6fmXkp6JmsjuFZsQgG8JaVOwAOeoa4cTzGWgTCmf8sQHMgJ6cm6VDY9C8XGjOaQaWKtwqmu6dEeqybYFTNZtBJHXZ2eOtyfXNWEYt1lqsbo=
+      api_key: $CI_TOKEN
       file_glob: true
       file: release/*
       skip_cleanup: true
