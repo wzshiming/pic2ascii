@@ -2,7 +2,7 @@
 
 [![Build Status](https://travis-ci.org/wzshiming/pic2ascii.svg?branch=master)](https://travis-ci.org/wzshiming/pic2ascii)
 [![Go Report Card](https://goreportcard.com/badge/github.com/wzshiming/pic2ascii)](https://goreportcard.com/report/github.com/wzshiming/pic2ascii)
-[![Docker Automated build](https://img.shields.io/docker/cloud/automated/wzshiming/pic2ascii.svg)](https://hub.docker/r/wzshiming/pic2ascii)
+[![Docker Automated build](https://img.shields.io/docker/cloud/automated/wzshiming/pic2ascii.svg)](https://hub.docker.com/r/wzshiming/pic2ascii)
 [![GitHub license](https://img.shields.io/github/license/wzshiming/pic2ascii.svg)](https://github.com/wzshiming/pic2ascii/blob/master/LICENSE)
 
 - [English](https://github.com/wzshiming/pic2ascii/blob/master/README.md)
